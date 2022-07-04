@@ -143,20 +143,24 @@
                <input type="text" id="name" class="form-control" name="entry.1168329851" placeholder="Tên của bạn"
                   maxlength="20" required aria-required="true">
 
-               <div class="input-group">
-                  <input type="text" id="phone" class="form-control" name="entry.743435629" placeholder="SĐT"
-                     maxlength="50" required aria-required="true">
-
-                  <input type="email" id="email" class="form-control" name="entry.402240322" placeholder="Email"
-                     required aria-required="true">
-               </div>
-
+               <input type="text" id="phone" class="form-control" name="entry.743435629" placeholder="SĐT"
+                  maxlength="50" required aria-required="true">
 
                <label class="label">Phương tiện</label>
-               <select class="form-control" name="entry.596553765" required>
+               <select class="form-control" name="entry.596553765" required onchange="onVehicleChange();"
+                  title="vehicle">
                   <option value="Tự túc">Tự túc</option>
                   <option value="Đi cùng đoàn">Đi cùng đoàn</option>
                </select>
+
+               <div id="departure" class="hidden">
+                  <label class="label">Điểm khởi hành</label>
+                  <select class="form-control" name="entry.881897134" required title="departure" style="width: 100%">
+                     <option value="FPT Software">BV Từ Dũ</option>
+                     <option value="FPT Software">FPT Software</option>
+                  </select>
+               </div>
+
                <button type="submit" name="submit" class="btn venue">Gửi</button>
             </form>
             <span id="thanks" class="submit-value hidden">Cảm ơn bạn đã gửi phản hồi!</span>
@@ -239,6 +243,14 @@
             next: 4,
          },
       });
+
+      function onVehicleChange() {
+         if (document.querySelector('select[name="entry.596553765"]').value === "Đi cùng đoàn") {
+            document.getElementById('departure').classList.remove('hidden')
+         } else {
+            document.getElementById('departure').classList.add('hidden')
+         }
+      }
    </script>
 </body>
 
