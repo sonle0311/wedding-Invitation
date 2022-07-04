@@ -674,6 +674,7 @@ a {
   width: 300px !important;
   border-radius: 16px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .swiper-slide img {
