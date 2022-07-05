@@ -41,9 +41,9 @@
          <div class="wrap">
             <div class="title">
                <h1>Thanh Sơn & Cẩm Thu</h1>
-               <h3>Chúng tôi cưới</h3>
+               <h3>Chúng em cưới</h3>
                <p>
-                  Vào lúc <span class="date">17 Tháng 7 2022</span></29>
+                  Vào lúc <span class="date">11h00 17 Tháng 7 2022</span></29>
                </p>
                <p>
                   Tổ 4, Ấp An Hòa, Xã Tam Thôn Hiệp, H.Cần Giờ, TP.HCM
@@ -67,7 +67,7 @@
          </div>
 
          <p class="dance-med">
-            Những kỉ niệm
+            10 năm Anh và Em...
          </p>
          <div class="swiper-container">
             <div class="swiper">
@@ -129,7 +129,7 @@
 
          <div class="rsvp-container">
             <p class="dance-med">
-               RSVP
+               Hãy để chúng em lo lắng việc di chuyển của mọi người!
             </p>
 
             <script type="text/javascript">var submitted = false;</script>
@@ -155,9 +155,10 @@
 
                <div id="departure" class="hidden">
                   <label class="label">Điểm khởi hành</label>
-                  <select class="form-control" name="entry.881897134" required title="departure" style="width: 100%">
-                     <option value="FPT Software">BV Từ Dũ</option>
-                     <option value="FPT Software">FPT Software</option>
+                  <select class="form-control" name="entry.881897134" title="departure" style="width: 100%">
+                     <option value=""></option>
+                     <option value="BV Từ Dũ">BV Từ Dũ</option>
+                     <option value="FPT Software FT3">FPT Software FT3</option>
                   </select>
                </div>
 
@@ -245,10 +246,15 @@
       });
 
       function onVehicleChange() {
+         const departureElem = document.getElementById('departure')
+         const departureSelectElem = departureElem.querySelector('select[name="entry.881897134"]')
          if (document.querySelector('select[name="entry.596553765"]').value === "Đi cùng đoàn") {
-            document.getElementById('departure').classList.remove('hidden')
+            departureElem.classList.remove('hidden')
+            departureSelectElem.required = true
          } else {
-            document.getElementById('departure').classList.add('hidden')
+            departureElem.classList.add('hidden')
+            departureSelectElem.required = false
+            departureSelectElem.selectedIndex = 0
          }
       }
    </script>
