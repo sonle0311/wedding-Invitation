@@ -150,7 +150,7 @@
                <select class="form-control" name="entry.596553765" required onchange="onVehicleChange();"
                   title="vehicle">
                   <option value="Tự túc">Tự túc</option>
-                  <option value="Đi cùng đoàn">Đi cùng đoàn</option>
+                  <option value="Xe buýt do chúng em chuẩn bị">Xe buýt do chúng em chuẩn bị</option>
                </select>
 
                <div id="departure" class="hidden">
@@ -248,7 +248,7 @@
       function onVehicleChange() {
          const departureElem = document.getElementById('departure')
          const departureSelectElem = departureElem.querySelector('select[name="entry.881897134"]')
-         if (document.querySelector('select[name="entry.596553765"]').value === "Đi cùng đoàn") {
+         if (document.querySelector('select[name="entry.596553765"]').value === "Xe buýt do chúng em chuẩn bị") {
             departureElem.classList.remove('hidden')
             departureSelectElem.required = true
          } else {
